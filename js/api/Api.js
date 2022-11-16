@@ -1,24 +1,13 @@
-class Api {
-    /**
-     * 
-     * @param {string} url 
-     */
-    constructor(url){
-        this._url = url
-    }
-    async get() {
-        return fetch(this._url)
-        .then(res => res.json())
-        .then(res => res.data)
-        .catch(err => console.log('an errror occurs', err))
-    }
-}
+	// Penser à remplacer par les données récupérées dans le json
+	fetch('./data/recipes.json')
+		.then((res) => res.json()) // convertisseur json => js
+		.then((data) => {
 
-class RecipesApi extends Api {
-    constructor(url) {
-        super(url)
-    }
-    async getRecipes() {
-        return await this.get()
-    }
-}
+        data.recipes.forEach((data) => {
+            console.log(data);
+        });
+        
+            
+        }); 
+
+
