@@ -1,25 +1,15 @@
-import { getData } from "../api/Api";
+const newArray = []
 
-export const toto = () => {
-	getData().then((data) => {
-		/* do what you want to do in promise resolve callback function */
-        data.forEach((recipe) => {
-            console.log(recipe);
-        })
+function recipesDisplay(recipesArray) {
+	const recipesSelection = document.getElementById('recipes')
+	recipesArray.forEach((recipe) => {
+		const recipesCard = document.createElement('article')
+		recipesCard.classList.add('recipes__card')
+		/* HEADER */
+		const recipesHeader = document.createElement('header')
+		recipesHeader.classList.add('recipes__card__header');
+		//recipesCard.appendChild(recipesHeader)
 	});
-};
-toto()
+}
+recipesDisplay(recipes);
 
-
-
-/*
-export function recipesCard (recipes) {
-    const recipesSelection = document.getElementById('recipes');
-    recipes.forEach((recipe) => {
-        const oui = document.createElement('div')
-        oui.innerHTML=`
-        <div>oui</di>
-        `
-    });
-
-}*/
